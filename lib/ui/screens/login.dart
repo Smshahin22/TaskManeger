@@ -173,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
 
                  const SizedBox(
-                    height: 24,
+                    height: 30,
                   ),
 
                   Center(
@@ -181,8 +181,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const VerifyWithEmailScreen()));
                       },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(0, 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: const Text('Forgot Password?',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(
+                            color: Colors.grey,
+                        ),
                       ),
                     ),
                   ),
@@ -190,18 +197,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Don't have an account?"),
+
+                      const Text("Don't have an account?",
+                        style: TextStyle(
+                          height: 0
+                        ),
+                      ),
                       TextButton(
                           onPressed: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignUpScreen() ));
                           },
+
                           child: const Text(
                             'Sign up',
                             style: TextStyle(
                                 color: Colors.green,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold
-                            ),))
+                            ),
+                          )
+                      )
                     ],
                   )
                 ],
