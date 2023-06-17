@@ -35,7 +35,10 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     _firstNameETController.text = AuthUtils.firstName ?? '';
     _lastNameETController.text = AuthUtils.lastName ?? '';
     _mobileETController.text = AuthUtils.mobile ?? '';
+
   }
+
+
 
   void updateProfile() async{
     _inProgress = true;

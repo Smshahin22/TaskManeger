@@ -8,6 +8,8 @@ class UserProfileWidget extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -19,7 +21,9 @@ class UserProfileWidget extends StatelessWidget {
           horizontal: 16,
           vertical: 0
       ),
-      leading: const CircleAvatar(child: Icon(Icons.person)),
+      leading:  CircleAvatar(
+      // backgroundImage: NetworkImage(AuthUtils.profilePic ?? "")
+      ),
       tileColor: Colors.green,
       title:  Text('${AuthUtils.firstName ?? ''} ${AuthUtils.lastName ?? ''}'),
       subtitle: Text(AuthUtils.email ?? 'unknown'),
